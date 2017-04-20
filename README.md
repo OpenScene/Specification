@@ -1,0 +1,2 @@
+# spec
+OpenScene Specification
