@@ -1,6 +1,7 @@
 import { Object3D } from './Object3D'
 import { Vector4 } from './Vector4'
 import { Vector3 } from './Vector3'
+import { Entity } from './Entity'
 
 /**
  * Build-in camera projection types.
@@ -81,4 +82,7 @@ export interface Camera extends Object3D {
    */
 
   fov?: number;
+}
+
+export class Camera implements Camera {
 }

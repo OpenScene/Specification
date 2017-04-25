@@ -1,3 +1,4 @@
+import { Quaternion } from './Quaternion'
 import { Vector3 } from './Vector3'
 import { Entity } from './Entity'
 
