@@ -7,3 +7,4 @@ if [ -z "$TSC" ]; then
 fi
 
 $TSC *.ts
+rm -f *.js

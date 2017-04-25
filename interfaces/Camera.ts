@@ -7,10 +7,7 @@ import { Entity } from './Entity'
  * Build-in camera projection types.
  */
 
-export const enum CameraProjectionTypes {
-  Orthographic,
-  Perspective,
-}
+export type CameraProjectionTypes = "perspective" | "orthographic"
 
 /**
  * The `CameraViewport` type represents a structure
@@ -61,7 +58,7 @@ export interface Camera extends Object3D {
    * @see {@link CameraProjectionTypes}
    */
 
-  projection: string;
+  projection: CameraProjectionTypes;
 
   /**
    * The camera's viewport. This value is optional and should be

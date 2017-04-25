@@ -6,25 +6,23 @@ import { URL } from './URL'
  * Built-in primitive geometry.
  */
 
-export const enum GeometryPrimitives {
-  Triangle,
-  Cylinder,
-  Capsule,
-  Sphere,
-  Plane,
-  Torus,
-  Box,
-}
+export type GeometryPrimitives = ""
+  | "triangle"
+  | "cylinder"
+  | "capsule"
+  | "sphere"
+  | "plane"
+  | "torus"
+  | "box"
 
 /**
  * Geometry entity format types used to derive an internal
  * parser.
  */
 
-export const enum GeometryFormatTypes {
-  Three, // THREE.js Geometry spec
-  Obj, // Wavefront OBJ format
-}
+export type GeometryFormatTypes = ""
+  | "three" // THREE.js Geometry spec
+  | "obj" // Wavefront OBJ format
 
 /**
  * The `Geometry` type represents an interface for
@@ -61,7 +59,7 @@ export interface Geometry extends Entity {
    * @see {@link GeometryPrimitives}
    */
 
-  primitive?: string;
+  primitive?: GeometryPrimitives;
 
   /**
    * An optional URL value pointing to an external geometry description.
@@ -82,5 +80,5 @@ export interface Geometry extends Entity {
    * @see {@link GeometryFormatTypes}
    */
 
-  type?: string;
+  type?: GeometryFormatTypes;
 }
