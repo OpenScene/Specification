@@ -6,4 +6,10 @@ import { Entity } from './Entity'
  */
 
 export interface Scene extends Entity {
+
+  /**
+   * Scene entity class type.
+   */
+
+  class: 'scene'
 }

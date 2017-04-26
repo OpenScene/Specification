@@ -10,6 +10,12 @@ import { Entity } from './Entity'
 export interface Object3D extends Entity {
 
   /**
+   * Object3D entity class type.
+   */
+
+  class: 'object3d'
+
+  /**
    * The rotation (or orientation) of the object.kj
    */
 

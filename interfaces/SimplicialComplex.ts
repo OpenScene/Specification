@@ -8,6 +8,13 @@ import { Entity } from './Entity'
  */
 
 export interface SimplicialComplex extends Entity {
+
+  /**
+   * SimplicialComplex entity class type.
+   */
+
+  class: 'complex'
+
   positions: Vector3[] | Array<Array<number>> | Array<number>;
   normals?: Vector3[] | Array<Array<number>> | Array<number>;
   cells?: Vector3[] | Array<Array<number>> | Array<number>;

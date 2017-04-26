@@ -3,28 +3,6 @@ import { Entity } from './Entity'
 import { URL } from './URL'
 
 /**
- * Built-in primitive geometry.
- */
-
-export type GeometryPrimitives = ""
-  | "triangle"
-  | "cylinder"
-  | "capsule"
-  | "sphere"
-  | "plane"
-  | "torus"
-  | "box"
-
-/**
- * Geometry entity format types used to derive an internal
- * parser.
- */
-
-export type GeometryFormatTypes = ""
-  | "three" // THREE.js Geometry spec
-  | "obj" // Wavefront OBJ format
-
-/**
  * The `Geometry` type represents an interface for
  * describing a geometry for a mesh. The geometry may
  * have a simplicial complex, be a built-in primitive,
@@ -32,6 +10,12 @@ export type GeometryFormatTypes = ""
  */
 
 export interface Geometry extends Entity {
+
+  /**
+   * Geometry entity class type.
+   */
+
+  class: 'geometry'
 
   /**
    * An optional simplicial complex structure. The structure
@@ -42,24 +26,22 @@ export interface Geometry extends Entity {
    * @see {@link SimplicialComplex}
    */
 
-  complex?: SimplicialComplex;
+  complex?: SimplicialComplex
 
   /**
    * An optional string value indicating the underlying
    * geometry primitive that should be used. This value may be
-   * one of the following:
-   *   - "triangle"
-   *   - "cylinder"
-   *   - "capsule"
-   *   - "sphere"
-   *   - "plane"
-   *   - "torus"
-   *   - "box"
-   *
-   * @see {@link GeometryPrimitives}
+   * one of the following primitives listed below.
    */
 
-  primitive?: GeometryPrimitives;
+  primitive?: ""
+    | "triangle"
+    | "cylinder"
+    | "capsule"
+    | "sphere"
+    | "plane"
+    | "torus"
+    | "box"
 
   /**
    * An optional URL value pointing to an external geometry description.
@@ -67,18 +49,16 @@ export interface Geometry extends Entity {
    * to be used when parsing the contents of the remote file.
    */
 
-  source?: URL;
+  source?: URL
 
   /**
    * An optional string value indicating the type of geometry. This value
    * should be used in conjunction with the `.source` URL value to help
    * indicate which parser to use. This value may be one of the
-   * following:
-   *   - "three"
-   *   - "obj"
-   *
-   * @see {@link GeometryFormatTypes}
+   * following listed below.
    */
 
-  type?: GeometryFormatTypes;
+  type?: ""
+    | "three" // THREE.js Geometry spec
+    | "obj" // Wavefront OBJ format
 }

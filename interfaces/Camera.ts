@@ -4,12 +4,6 @@ import { Vector3 } from './Vector3'
 import { Entity } from './Entity'
 
 /**
- * Build-in camera projection types.
- */
-
-export type CameraProjectionTypes = "perspective" | "orthographic"
-
-/**
  * The `CameraViewport` type represents a structure
  * that contains value useful for computing a camera's
  * projection.
@@ -21,25 +15,25 @@ export interface CameraViewport extends Entity {
    * The coordinate of the top of the viewport.
    */
 
-  top: number;
+  top: number
 
   /**
    * The coordinate of the left of the viewport.
    */
 
-  left: number;
+  left: number
 
   /**
    * The width of the viewport.
    */
 
-  width: number;
+  width: number
 
   /**
    * The height of the viewport.
    */
 
-  height: number;
+  height: number
 }
 
 /**
@@ -50,36 +44,35 @@ export interface CameraViewport extends Entity {
 export interface Camera extends Object3D {
 
   /**
-   * A camera projection type that must be defined. This value
-   * may be one of the following:
-   *   - "orthographic"
-   *   - "perspective"
-   *
-   * @see {@link CameraProjectionTypes}
+   * Camera entity class type.
    */
 
-  projection: CameraProjectionTypes;
+  class: 'camera'
+
+  /**
+   * A camera projection type that must be defined. This value
+   * may be one of the following listed below.
+   */
+
+  projection: 'perspective' | 'orthographic'
 
   /**
    * The camera's viewport. This value is optional and should be
    * computed if not provided.
    */
 
-  viewport?: CameraViewport | Vector4 | Array<number>;
+  viewport?: CameraViewport | Vector4 | Array<number>
 
   /**
-   * The camera's "look at" target vector.
+   * The camera's 'look at' target vector.
    */
 
-  target?: Vector3 | Array<number>;
+  target?: Vector3 | Array<number>
 
   /**
    * The field of view expressed in radians for a camera
    * with a perspective projection.
    */
 
-  fov?: number;
-}
-
-export class Camera implements Camera {
+  fov?: number
 }
