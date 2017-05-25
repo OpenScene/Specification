@@ -12,3 +12,4 @@ of this new standard began in 2017. The specification is actively being
 worked on.
 
 ## [Overview][Section 1 -- Overview.md]
+## [Entities][Section 2 -- Entity.md]

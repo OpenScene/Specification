@@ -34,8 +34,7 @@ export interface Geometry extends Entity {
    * one of the following primitives listed below.
    */
 
-  primitive?: ""
-    | "triangle"
+  primitive?: "triangle"
     | "cylinder"
     | "capsule"
     | "sphere"
@@ -58,7 +57,7 @@ export interface Geometry extends Entity {
    * following listed below.
    */
 
-  type?: ""
+  type?: "json" // simplicial complex in JSON format
     | "three" // THREE.js Geometry spec
     | "obj" // Wavefront OBJ format
 }
